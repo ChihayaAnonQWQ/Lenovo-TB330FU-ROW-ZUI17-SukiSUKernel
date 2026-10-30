@@ -150,7 +150,14 @@ SP Flash Tool（POGOPIN 版）：
 ### 中国大陆机型刷入国际版（ZUI 17）特别注意
 
 **中国大陆版机型**（如 `TB330FU_PRC`）用 SP Flash 刷入 **ZUI 17 国际版（ROW）** 后，
-如果设备提示 **"系统与硬件不匹配"**，属于机型区码与固件区码不一致，需要按镜像站的步骤解除限制：
+如果设备提示 **"系统与硬件不匹配"**，是机型区码与固件区码不一致导致的，
+需要修改 `proinfo` 分区里的区域代码。
+
+**📖 解除区域限制教程 → [联想联发科平板的区域机制和跨区刷机方法](https://hdk3.hikaricalyx.com/2026/04/24/lenovo-mtk-tablet/)**
+
+教程分两步：**提取 proinfo** → **修改区域代码**。
+
+> 本机实测 `proinfo` 为 `mmcblk0p34`（3 MiB）。其他机型请自行确认分区位置，**不要照抄**。
 
 **国际版（ROW）固件目录 →**
 **https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU/**
