@@ -1,0 +1,34 @@
+# 构建产物
+out/
+*.img
+*.o
+*.ko
+*.pyc
+__pycache__/
+
+# 工具链（数百 MB，自行下载）
+tools/
+
+# 证据/原始抓取内容（体积大且为第三方内容，不入库）
+research/raw/
+research/_raw/
+
+# 大文件
+ref/kallsyms.txt
+
+# 敏感信息 —— 绝对不能提交
+ref/kp-superkey.txt
+*.key
+*.pem
+.env
+
+# 本地备份
+*.bak
+*.rej
+*.orig
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
