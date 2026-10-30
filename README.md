@@ -108,6 +108,54 @@ sudo pacman -S --needed base-devel bc bison flex pahole lz4 cpio zstd git curl p
 
 ---
 
+## 固件与刷机前提
+
+### 对应固件（ZUI 17）
+
+本内核基于 **ZUI 17.0.074（ROW）** 构建。对应固件可在 Lenovo 镜像站下载：
+
+**https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU/**
+
+目录内与本内核对应的版本：
+
+| 文件 | 版本 | 说明 |
+|---|---|---|
+| `TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.074_ST_250417.zip` | ZUI 17.0.074 | **本内核对应版本** |
+| `TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.138_ST_250614.zip` | ZUI 17.0.138 | 较新，未测试 |
+
+SP Flash Tool（POGOPIN 版）：
+**https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/flashtool/**
+
+### 机型兼容性
+
+据社区反馈，本方案**理论兼容**联想所有 MTK G88 / TB330XX 平台机型，包括教育定制机：
+
+- M11 / 昭阳 K10 / 昭阳 K11C
+- TB330FB / TB330FC / TB330FU / TB337FC
+
+> ⚠️ **本项目仅在 TB330FU 上做过实机验证。** 其他机型属于理论兼容，未逐一测试。
+> 刷机前请自行确认机型与固件版本，并准备好原厂镜像用于回滚。
+
+### 工具链
+
+| 步骤 | 工具 | 说明 |
+|---|---|---|
+| 解锁 bootloader | **MTK_Client** | BROM 模式，需要拆机或短接进入 |
+| 刷入官方固件 | **SP Flash Tool** | 用镜像站 `flashtool/` 里的 POGOPIN 版本 |
+| 刷入本内核 | `fastboot` | `fastboot flash boot_a boot_a.kpm.img` |
+
+### 中国大陆版（ZUI 17）特别注意
+
+用 SP Flash 刷入 **ZUI 17 中国大陆版本**后，如果设备提示 **"系统与硬件不匹配"**，
+需要按镜像站提供的步骤解除该限制：
+
+**https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU/**
+
+中国大陆版固件目录：
+**https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU_CN/**
+
+---
+
 ## 刷入
 
 ```bash
