@@ -1,7 +1,7 @@
 # 设备实测事实（Device Facts）
 
 > 采集时间：2026-10-30 16:08 (Asia/Hong_Kong)
-> 采集方式：`adb`（adbd 以 root 运行），设备 `HA2FDDCR`
+> 采集方式：`adb`（adbd 以 root 运行），设备（序列号已隐去）
 > 性质：**全部为本机实测，可直接作为构建与打包的权威输入**
 
 ---
@@ -14,7 +14,7 @@
 | 产品名 | `TB330FU_PRC` |
 | SoC | `mt6768`（`boot.chipid=MT8786_8+128_18`，CPU arm64-v8a） |
 | 屏幕 | 1200×1920，密度 240，`LCM_name=hx83102j_dsi_vdo_boe_drv` |
-| 系统 | Android 15 (35)，ZUI 17.0.074 |
+| 系统 | Android 15 (35)，ZUI 17.0.502 |
 | 编译版本 | `S2003138_261010_ROW` |
 | fingerprint | `Lenovo/TB330FU_PRC/TB330FU:15/AP3A.240905.015.A2/S2003138_261010_ROW:user/release-keys` |
 | security_patch | `2026-10-05` |
@@ -348,7 +348,7 @@ wlan_drv_gen4m_6768: Unknown symbol cfg80211_scan_done (err -2)
 | 槽位 | `_a` |
 | **加载模块数** | **542**（与原厂完全一致；v1 时只有 472） |
 | WiFi 链路模块 | `rfkill` / `cfg80211` / `mac80211` / `wlan_drv_gen4m_6768` 全部加载 |
-| **WiFi** | **已连接 `FanchmWrt-5G`，`192.168.1.131/24`** |
+| **WiFi** | **已连接（SSID 与内网 IP 已隐去）** |
 | 蓝牙 | `enabled: true` / `state: ON`，`bluetooth`/`hci_uart`/`btqca` 已加载 |
 | Root | `su -c id` → `uid=0`，`context=u:r:ksu:s0`，`kernelsu` 模块 Live |
 | 显示 | 1200×1920，密度 240，刷新率 90 Hz |

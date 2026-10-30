@@ -1,7 +1,7 @@
 # MTK 6.6 Non-GKI 内核定制与移植 · 行动计划（Action Plan）
 
 > **设备**：Lenovo TB330FU（产品名 `TB330FU_PRC`，`mt6768` / `chipid MT8786_8+128_18`）
-> **系统**：ZUI 17.0.074（ROW），编译版本 `S2003138_261010_ROW`，Android 15 (35)，A/B + 动态分区
+> **系统**：ZUI 17.0.502（ROW），编译版本 `S2003138_261010_ROW`，Android 15 (35)，A/B + 动态分区
 > **内核**：**`6.6.118-android15-8-gf9c84f40b6ba-ab14657223-4k`**（`#1 SMP PREEMPT Sat Jan 3 21:50:53 UTC 2026`）
 > **现状**：BL 已解锁（`verifiedbootstate=orange`）、已用 SukiSU Ultra（LKM）通过 `boot_a` + `vendor_boot_a` 双分区注入 Root
 > **作业范围**：**只在 A 槽作业**（`ro.boot.slot_suffix=_a`）；B 槽只作逃生保险，**不刷写**

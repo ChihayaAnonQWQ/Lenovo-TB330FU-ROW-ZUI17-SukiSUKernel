@@ -1,6 +1,6 @@
 # ota-reinject.sh 使用说明
 
-> 目标设备：Lenovo **TB330FU**（MT6768 / Helio G88，Android 15 / ZUI 17.0.074，A/B 双槽 + 动态分区，内核 `6.6.118-android15-8`）
+> 目标设备：Lenovo **TB330FU**（MT6768 / Helio G88，Android 15 / ZUI 17.0.502，A/B 双槽 + 动态分区，内核 `6.6.118-android15-8`）
 > Root 方案：**SukiSU Ultra，LKM 模式，MTK 双分区注入**（`boot`/`init_boot` + `vendor_boot`）
 > 作用：**系统 OTA 之后**，自动完成"提取原厂镜像 → 修补 → fastboot 刷写 → MTKClient 关 AVB → 重启验证 Root"的闭环。
 

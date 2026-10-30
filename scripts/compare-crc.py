@@ -16,8 +16,9 @@ def main():
     symvers = Path(sys.argv[1]).expanduser().resolve()
     crcjson = Path(sys.argv[2]).expanduser().resolve() if len(sys.argv) > 2 else None
     if crcjson is None:
+        # 依次尝试：从 symvers 路径上溯找 ref/，以及当前工作目录下的 ref/
         for cand in (symvers.parent.parent.parent / 'ref' / 'vendor-crc.json',
-                     Path('/home/chihayaanon/tb330fu/ref/vendor-crc.json')):
+                     Path.cwd() / 'ref' / 'vendor-crc.json'):
             if cand.is_file():
                 crcjson = cand
                 break

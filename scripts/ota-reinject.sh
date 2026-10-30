@@ -5,7 +5,7 @@
 #
 #  目标设备：Lenovo TB330FU
 #    SoC     : MT6768 (Helio G88)
-#    System  : Android 15 / ZUI 17.0.074，A/B 双槽 + 动态分区
+#    System  : Android 15 / ZUI 17.0.502，A/B 双槽 + 动态分区
 #    Kernel  : 6.6.118-android15-8 (GKI)
 #
 #  注入链路：

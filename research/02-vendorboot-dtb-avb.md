@@ -1,6 +1,6 @@
 # 02 — vendor_boot 重打包与 AVB 处理（Lenovo TB330FU / MT6768 / Android 15）
 
-> 目标设备：Lenovo Tab M11 **TB330FU**，MT6768（Helio G88），Android 15 / ZUI 17.0.074，内核 `6.6.118-android15-8`，A/B + 动态分区（super），BL 已解锁、已 Root。
+> 目标设备：Lenovo Tab M11 **TB330FU**，MT6768（Helio G88），Android 15 / ZUI 17.0.502，内核 `6.6.118-android15-8`，A/B + 动态分区（super），BL 已解锁、已 Root。
 >
 > **本文的"已核实"定义**：能指向 AOSP / avbtool / Magisk / SukiSU / mtkclient **源码或官方文档**原文，或指向 TB330FU 专属的设备树/实操记录。
 > **"推测"**：由已核实事实推出、但未有该机型原始 dump 直接佐证（例如没有实际读到本机 `vendor_boot.img`）。

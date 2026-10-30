@@ -112,16 +112,28 @@ sudo pacman -S --needed base-devel bc bison flex pahole lz4 cpio zstd git curl p
 
 ### 对应固件（ZUI 17）
 
-本内核基于 **ZUI 17.0.074（ROW）** 构建。对应固件可在 Lenovo 镜像站下载：
+本内核在 **ZUI 17（ROW）** 上实测验证，设备实际运行版本：
+
+```
+ro.build.display.id  = TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.502_ST_261010
+ro.build.id          = AP3A.240905.015.A2
+ro.build.fingerprint = Lenovo/TB330FU_PRC/TB330FU:15/AP3A.240905.015.A2/S2003138_261010_ROW:user/release-keys
+```
+
+> 注意：设备为 **中国大陆版机型（`TB330FU_PRC`）** 运行 **ROW 国际版固件** ——
+> 正是下文「区域机制」一节描述的场景。
+
+Lenovo 镜像站上可下载的 ZUI 17 版本：
 
 **https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU/**
 
-目录内与本内核对应的版本：
-
 | 文件 | 版本 | 说明 |
 |---|---|---|
-| `TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.074_ST_250417.zip` | ZUI 17.0.074 | **本内核对应版本** |
-| `TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.138_ST_250614.zip` | ZUI 17.0.138 | 较新，未测试 |
+| `TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.074_ST_250417.zip` | ZUI 17.0.074 | 镜像站可下载 |
+| `TB330FU_ROW_OPEN_USER_V5_V_ZUI_17.0.138_ST_250614.zip` | ZUI 17.0.138 | 镜像站可下载，较新 |
+
+> ⚠️ 本机实跑的 **17.0.502 不在该镜像站**（应为较新的 OTA 版本）。
+> 上表两个版本同属 ZUI 17 分支，理论上适用，但**未经本机实测**。
 
 SP Flash Tool（POGOPIN 版）：
 **https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/flashtool/**

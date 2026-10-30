@@ -1,6 +1,6 @@
 # 01 · 源码、SUSFS、Zygisk、LKM 注入：可执行技术事实
 
-> 目标设备：Lenovo TB330FU（Tab M11，代号 **barley**），ZUI 17.0.074 (ROW)，内核 `6.6.118-android15-8`，A/B + 动态分区，已用 SukiSU Ultra **LKM 模式** root（boot_a + vendor_boot_a 双分区注入）。
+> 目标设备：Lenovo TB330FU（Tab M11，代号 **barley**），ZUI 17.0.502 (ROW)，内核 `6.6.118-android15-8`，A/B + 动态分区，已用 SukiSU Ultra **LKM 模式** root（boot_a + vendor_boot_a 双分区注入）。
 > 调研时间：2026-10-30。**本机无设备访问**，所有"设备侧取证"步骤均为待你实测的步骤，不是已核实结果。
 > 标记约定：**【已核实】** = 我实际抓取到原文/接口返回/源码并核对；**【推断】** = 由已核实事实推导、未见直接文档；**【未找到可靠来源】** = 明确查不到。
 
@@ -8,7 +8,7 @@
 
 ## 0. 本次最重要的一条修正（请先读）
 
-Lead 转述的一手 README 里写着内核基线是 **6.6.30**（`6.6.30-android15-8-g94c1a24cabd5-ab12293704-4k`）。但该 README 所依据的固件是 **ZUI 16 / ROW074**，与本任务的 **ZUI 17.0.074** 不是同一版本。因此：
+Lead 转述的一手 README 里写着内核基线是 **6.6.30**（`6.6.30-android15-8-g94c1a24cabd5-ab12293704-4k`）。但该 README 所依据的固件是 **ZUI 16 / ROW074**，与本任务的 **ZUI 17.0.502** 不是同一版本。因此：
 
 **6.6.30 那一套 vermagic 串、commit SHA、defconfig 全部不能直接用于 6.6.118。** 方法论（构造方式、提取方式、AVB 处理）可以复用，具体数值必须在本机重新取证。
 
@@ -151,7 +151,7 @@ Makefile VERSION.PATCHLEVEL.SUBLEVEL
 uname -r                      # 期望输出 6.6.118-android15-8-gXXXXXXXXXXXX-abXXXXXXXX-4k
 cat /proc/version             # 同上 + 编译器信息
 getprop ro.boot.slot_suffix   # 当前槽位
-getprop ro.build.display.id   # ZUI 17.0.074 校验
+getprop ro.build.display.id   # ZUI 17.0.502 校验
 # 有 root 时最可靠：
 zcat /proc/config.gz | grep -E 'LOCALVERSION|MODVERSIONS'   # 若开了 IKCONFIG_PROC
 ```
