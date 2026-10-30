@@ -147,15 +147,20 @@ SP Flash Tool（POGOPIN 版）：
 | 刷入官方固件 | **SP Flash Tool** | 用镜像站 `flashtool/` 里的 POGOPIN 版本 |
 | 刷入本内核 | `fastboot` | `fastboot flash boot_a boot_a.kpm.img` |
 
-### 中国大陆版（ZUI 17）特别注意
+### 中国大陆机型刷入国际版（ZUI 17）特别注意
 
-用 SP Flash 刷入 **ZUI 17 中国大陆版本**后，如果设备提示 **"系统与硬件不匹配"**，
-需要按镜像站提供的步骤解除该限制：
+**中国大陆版机型**（如 `TB330FU_PRC`）用 SP Flash 刷入 **ZUI 17 国际版（ROW）** 后，
+如果设备提示 **"系统与硬件不匹配"**，属于机型区码与固件区码不一致，需要按镜像站的步骤解除限制：
 
+**国际版（ROW）固件目录 →**
 **https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU/**
 
-中国大陆版固件目录：
+如需刷回中国大陆版固件：
+
+**中国大陆版固件目录 →**
 **https://mirrors.lolinet.com/firmware/lenowow/2023/Tab_M11_2024/TB330FU_CN/**
+
+> 反向（国际版机型刷中国大陆版固件）同样可能触发该提示，解除方式相同。
 
 ---
 
